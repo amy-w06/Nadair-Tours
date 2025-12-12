@@ -1,0 +1,468 @@
+/* defining non-default colours */
+:root {
+    --buttonColor: #0a2472;
+    --hoverColor: #060f4a;
+    --backgroundColour: #b2c4d1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Verdana", "Arial";
+    background-color: antiquewhite;
+}
+
+/*NavBar on the top */
+.navbar {
+    background-color: var(--buttonColor);
+    overflow: hidden;
+    list-style-type: none;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1; /* taken from css of: https://mailchimp.com/resources/website-footer/?gclsrc=aw.ds&gad_source=1&gad_campaignid=22771402295&gbraid=0AAAABAjJIRtBFpwplcASLN92mpGE_j1Uh&gclid=CjwKCAiAoNbIBhB5EiwAZFbYGB8Qa6nalZjc1Nrhm9gFJ2jxk1dGVTVhnqw0dUzpR1B7WtmAN6IMlxoCE8IQAvD_BwE */
+}
+.navbar li a {
+    display: block;
+    float: left;
+    color: antiquewhite;
+    font-size: 110%;
+    text-decoration: none;
+    padding: 1.5em 2em;
+}
+.navbar a.right {
+    float: right;
+}
+
+.navbar li a:hover {
+    background-color: var(--hoverColor); /* darker when hovered over */
+}
+
+/* Image with text over it in every page */
+.top {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    margin-bottom: 2%;
+    position: relative;
+}
+.top .intro {
+    /* makes textbox centered in the image DONT TOUCH */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.95;
+    border-radius: 2.5vh;
+    padding: 1.5em 2em;
+}
+.tourButton {
+    text-align: center;
+    color: antiquewhite;
+    background-color: var(--buttonColor);
+    border-radius: 1.5vh;
+    padding: 1vh;
+    margin: 2vh 1vw;
+    text-decoration: none;
+}
+
+/* footer at bottom of some pages */
+footer {
+    background-color: var(--buttonColor);
+    color: antiquewhite;
+    text-align: center;
+    padding: 1vh;
+    bottom: 0;
+}
+footer a {
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+/* HOME PAGE */
+/* about us section */
+#aboutUs {
+    max-width: fit-content;
+    margin: auto;
+    border-radius: 2.5vh;
+    padding: 0 1.5em 2em;
+    text-align: center;
+}
+
+/* a box about each un goal */
+.goalsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+    margin: 2vh 2vw;
+}
+.unGoal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30vw;
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+
+    background-color: antiquewhite;
+    text-align: center;
+    vertical-align: center;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+.toursIntro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.toursIntro .tourButton {
+    max-width: fit-content;
+}
+
+/* TOURS PAGE */
+/* for displaying the overview from the database */
+.tourList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    row-gap: 2vh;
+    flex-wrap: wrap;
+    margin: 2vh 2vw 2vh 2vw;
+}
+.tourItem {
+    max-width: 21%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+
+    background-color: antiquewhite;
+    text-align: center;
+    vertical-align: center;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+.tourItem img {
+    width: 100%;
+    height: 15vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+/* buttons for each tour (view details and add to cart) */
+.buttonContainer {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#detailsButton, #cartButton, #bookButton, #tourButton {
+    padding: 1vh;
+    margin-top: 1vh;
+    width: 10vw;
+    max-height: fit-content;
+    border: none;
+    color: antiquewhite;
+    text-decoration: none;
+    background-color: var(--buttonColor);
+    border-radius: 1.5vh;
+    cursor: pointer;
+}
+#cartButton {  /* overwriting some properties */
+    font-size: 105%;
+}
+#tourButton {  /* overwriting some properties */
+    width: fit-content;
+}
+
+/* pagination layout */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1%;
+    margin: 5vh 0 2.5vh 0;
+}
+.pagination li a {
+    display: block;
+    padding: 1em 1em;
+    text-decoration: none;
+    border: 0.1vh solid black;
+    border-radius: 1.5vh;
+}
+.pagination li.active a {
+    background-color: var(--buttonColor);
+    color: white;
+}
+
+.title {
+    text-align: center;
+}
+
+/* TOUR DETAILS PAGE */
+.detailsBody {
+    margin: 2vh 16vw;
+    padding: 2vw;
+    overflow: visible;
+}
+.mainDescription {
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+    display: inline-block;
+    float: left;
+    width: 40vw;
+    margin-bottom: 4vh;
+
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+.tourDetails {
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+    display: inline-block;
+    float: right;
+    width: 12vw;
+
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+.itinerary {
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+    display: inline-block;
+    float: left;
+    width: 40vw;
+    margin-bottom: 4vh;
+
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+.detailsButtonContainer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5%;
+}
+#detailsCartButton, #detailsBookButton {
+    padding: 1vh;
+    max-width: fit-content;
+    max-height: fit-content;
+    border: none;
+    color: antiquewhite;
+    text-decoration: none;
+    background-color: var(--buttonColor);
+    border-radius: 1.5vh;
+}
+#detailsCartButton {
+    font-size: 100%;
+    cursor: pointer;
+}
+.gallery {
+    float: left;
+    position: relative;
+    width: 30vw;
+    height: 30vh;
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2.5vh;
+    padding: 1.5%;
+}
+.slides {
+    width: 100%;
+    height: 80%
+}
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* original ratio */
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--buttonColor);
+    font-size: 150%;
+    font-weight: bold;
+    padding: 2%;
+}
+.next {
+    right: 3.5%;
+}
+.prev:hover, .next:hover {
+    background-color: rgba( 250, 235, 215, 0.8);
+}
+
+.detailsBody::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* BOOKING FORM */
+.bookingDetails {
+    padding-top: 5vh;
+    padding-left: 1.5em;
+    font-size: 120%;
+}
+#form {
+    margin: 2vh 2vw;
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+    max-width: fit-content;
+    background-color: antiquewhite;
+    font-size: 120%;
+}
+
+/* CART PAGE */
+.cartPage {
+    display: flex;
+}
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    background-color: antiquewhite;
+    width: 66%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    width: 80%;
+    border-radius: 2.5vh;
+
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+.cartItem img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    padding-right: 4%;
+}
+
+.cartDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 34%;
+    background-color: antiquewhite;
+    padding: 1%;
+    padding-top: 4%;
+}
+#cartForm {
+    padding: 2%;
+    width: 90%;
+    border-radius: 2.5vh;
+
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+
+.information {
+    margin: 0 auto;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+    width: 70%;
+
+    background-color: antiquewhite;
+    text-align: center;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ADMIN SECTION */
+/* ADMIN HOME PAGE */
+.adminBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5%;
+}
+.toursOptions, .bookingOptions, .ordersOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2.5vh;
+    padding: 1.5em 1.5em;
+    width: 30%;
+
+    background-color: antiquewhite;
+    text-align: center;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+}
+
+/* VIEW ORDERS AND VIEW BOOKINGS */
+.viewTable {
+    text-align: center;
+    padding: 2%;
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+    margin: 2% auto;
+    width: fit-content;
+    border-radius: 2.5vh;
+}
+.viewTable table {
+    padding: 1%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: auto;
+    max-width: 100%;
+}
+.viewTable td, .viewTable th{  /* for both booking and orders view */
+    border: 0.1vw solid #ddd;
+    padding: 1vw;
+    text-align: center;
+}
+.viewTable th {
+    background-color: var(--buttonColor);
+    color: antiquewhite;
+}
+
+/* DELETE AND UPDATE TOURS, ORDERS, AND BOOKINGS */
+/* ALSO VIEW TOUR DETAILS */
+.idSelector, .inputContainer, .viewTours {
+    text-align: center;
+    padding: 2%;
+    background-color: antiquewhite;
+    box-shadow: 0 1vh 2vh 0 rgba(0, 0, 0, 0.2), 0 1.5vw 3vw 0 rgba(0, 0, 0, 0.19);
+    margin: 2% auto;
+    width: fit-content;
+    border-radius: 2.5vh;
+}
+.inputContainer {
+    text-align: left;
+}
+.inputContainer table td {
+    padding: 2%;
+}
+
+.viewTours{
+    text-align: left;
+    margin: 2%;
+}
+.viewTours img{
+    max-width: 10%;
+    max-height: 10%;
+}
